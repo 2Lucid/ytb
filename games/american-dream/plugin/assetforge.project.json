@@ -1,0 +1,9 @@
+{
+  "name": "AssetForge",
+  "tree": {
+    "$className": "Folder",
+    "AssetForge": {
+      "$path": "AssetForge"
+    }
+  }
+}

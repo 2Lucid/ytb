@@ -34,3 +34,4 @@ Thumbs.db
 .vscode/settings.json
 .idea/
 tools/globalTypes.d.luau
+games/american-dream/plugin/sourcemap.json

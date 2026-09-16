@@ -1,0 +1,7 @@
+# Bibliothèque standard selene pour le contexte plugin : ajoute le global `plugin`.
+# Utilisée via std = "roblox+plugin" (selene fusionne les deux).
+base: roblox
+
+globals:
+  plugin:
+    property: read-only

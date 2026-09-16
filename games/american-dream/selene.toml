@@ -1,4 +1,4 @@
-std = "roblox"
+std = "roblox+plugin"
 exclude = ["src/server/Vendor/**", "tests/run.luau", "tests/loader.luau"]
 
 [lints]

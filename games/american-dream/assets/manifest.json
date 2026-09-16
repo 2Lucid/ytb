@@ -1,0 +1,3113 @@
+{
+ "game": "american-dream",
+ "style": "low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+ "generatedAt": "2026-09-16T11:40:20Z",
+ "rateLimitPerMinute": 5,
+ "counts": {
+  "mesh": 105,
+  "character": 8,
+  "animation": 14,
+  "image": 36,
+  "audio": 33
+ },
+ "assets": [
+  {
+   "id": "MSH_A1_DROP_LemonadeStand",
+   "kind": "mesh",
+   "category": "DROP",
+   "act": 1,
+   "prompt": "wooden lemonade stand with a hand painted sign board, crates of lemons, small awning, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    5,
+    4
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_UPG_RustyJuicer",
+   "kind": "mesh",
+   "category": "UPG",
+   "act": 1,
+   "prompt": "rusty cast iron manual citrus juicer press on a small metal table, worn paint, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_COLL_CoinJar",
+   "kind": "mesh",
+   "category": "COLL",
+   "act": 1,
+   "prompt": "large glass jar half filled with coins on a wooden crate, metal lid with a slot, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_CONV_PlankTrestle",
+   "kind": "mesh",
+   "category": "CONV",
+   "act": 1,
+   "prompt": "long wooden plank resting on two sawhorse trestles, weathered timber, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    30,
+    1,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_CardboardShelter",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "makeshift cardboard box shelter with a folded blanket, damp corrugated texture, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    4,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_Dumpster",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "dented green metal dumpster with a separate hinged lid part, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    7,
+    5,
+    4
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_TrashBags",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "pile of four black plastic garbage bags, glossy crumpled surface, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    3,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_FireEscape",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "modular steel fire escape section with stairs and railing, flaking black paint, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    8,
+    12,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_Pallet",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "stack of two wooden shipping pallets, splintered edges, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    2,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_ShoppingCart",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "supermarket shopping cart with one bent wheel, chrome wire basket, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    3,
+    4,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_RustyBike",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "rusty bicycle leaning on nothing, flat tires, missing seat, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    4,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_BentLamppost",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "bent street lamppost with a cracked lamp head, chipped grey paint, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    14,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_Crate",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "wooden fruit crate with slatted sides, stencil marks worn off, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    2,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A1_DECO_Puddle",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 1,
+   "prompt": "flat shallow water puddle disc with a rippled reflective surface, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    1,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DROP_VendingMachine",
+   "kind": "mesh",
+   "category": "DROP",
+   "act": 2,
+   "prompt": "illuminated drinks vending machine with a glass front and lit product rows, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    7,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_UPG_CoffeeMachine",
+   "kind": "mesh",
+   "category": "UPG",
+   "act": 2,
+   "prompt": "stainless steel espresso machine with portafilter and steam wand, commercial size, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_COLL_CashRegister",
+   "kind": "mesh",
+   "category": "COLL",
+   "act": 2,
+   "prompt": "vintage brass cash register with a separate sliding drawer part and round keys, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    4,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_CONV_CheckoutBelt",
+   "kind": "mesh",
+   "category": "CONV",
+   "act": 2,
+   "prompt": "supermarket checkout conveyor belt segment with rubber belt and metal frame, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    24,
+    1,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_StorefrontFacade",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "small corner store facade with a wide window, door and blank sign panel above, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    12,
+    2
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_Gondola",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "supermarket gondola shelving unit with four shelves of boxed goods, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    8,
+    6,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_GlassFridge",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "upright glass door drinks fridge with lit interior shelves, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    7,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_NeonOpen",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "blank oval neon sign tube ring on a dark backing plate, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    2,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_WhiteVan",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "plain white delivery van with blank side panels, boxy shape, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    16,
+    7,
+    7
+   ],
+   "decalSlot": "Right",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_HandTruck",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "two wheeled hand truck dolly leaning against nothing, steel frame, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    5,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_SecurityCamera",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "wall mounted dome security camera on a short bracket arm, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    2,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_SmallSafe",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "small floor safe with a round combination dial and thick door, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    3,
+    3,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A2_DECO_FruitCrates",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 2,
+   "prompt": "stack of three open crates of apples and oranges, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DROP_HydraulicPress",
+   "kind": "mesh",
+   "category": "DROP",
+   "act": 3,
+   "prompt": "industrial hydraulic press with a separate vertical piston part and yellow safety frame, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    6,
+    8,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_UPG_RobotArm",
+   "kind": "mesh",
+   "category": "UPG",
+   "act": 3,
+   "prompt": "yellow industrial robot arm with three articulated segments on a round base, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    4,
+    7,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_COLL_Palletizer",
+   "kind": "mesh",
+   "category": "COLL",
+   "act": 3,
+   "prompt": "factory palletizer station with a roller table and stacked output pallet, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    7,
+    6,
+    6
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_CONV_RollerBelt",
+   "kind": "mesh",
+   "category": "CONV",
+   "act": 3,
+   "prompt": "heavy industrial roller conveyor section with steel rollers and side rails, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    30,
+    2,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_SteelHangar",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "modular corrugated steel hangar wall section with ribbed panels, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    14,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Chimney",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "tall red brick factory chimney tapering upward with a metal band at the top, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    5,
+    30,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_ChemicalTank",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "large cylindrical chemical storage tank with pipes and a top hatch, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    7,
+    9,
+    7
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_ToxicBarrel",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "rusted steel barrel with a warning stripe band, dented lid, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    4,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Container",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "shipping container with separate hinged double doors on one end, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    20,
+    8,
+    8
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Forklift",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "warehouse forklift with separate fork carriage and four wheels, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    8,
+    7,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Gantry",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "overhead gantry crane rail section with a trolley block, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    6,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Lockers",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "row of four dented metal changing room lockers, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    7,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_Generator",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "portable diesel generator unit with exhaust pipe and control panel, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    5,
+    4,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A3_DECO_SafetySign",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 3,
+   "prompt": "blank rectangular safety sign on a short metal post, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    4,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DROP_ServerRack",
+   "kind": "mesh",
+   "category": "DROP",
+   "act": 4,
+   "prompt": "black server rack cabinet with rows of blinking LED strips and mesh doors, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    8,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_UPG_TradingScreen",
+   "kind": "mesh",
+   "category": "UPG",
+   "act": 4,
+   "prompt": "curved ultrawide trading monitor on a desk arm, dark bezel, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    4,
+    2
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_COLL_ExecutiveDesk",
+   "kind": "mesh",
+   "category": "COLL",
+   "act": 4,
+   "prompt": "executive desk of glass and brushed steel with a leather blotter, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    10,
+    4,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_CONV_PneumaticTube",
+   "kind": "mesh",
+   "category": "CONV",
+   "act": 4,
+   "prompt": "clear pneumatic tube section with brass couplings, straight run, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    2,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_OfficeFloor",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "modular open plan office floor plate with low partitions, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    3,
+    20
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_Workstation",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "office workstation with monitor, keyboard and swivel chair, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    5,
+    4,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_Photocopier",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "large floor standing office photocopier with paper trays, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    5,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_WaterCooler",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "office water cooler with an inverted blue bottle and two taps, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    5,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_BoardTable",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "long oval boardroom table in dark polished wood, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    16,
+    3,
+    7
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_GlassElevator",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "glass elevator shaft section with separate sliding double doors, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    6,
+    12,
+    6
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_LeatherChair",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "high backed black leather executive chair on a chrome base, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    5,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_PlasticPlant",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "artificial ficus plant in a square white pot, slightly dusty, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    6,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_AbstractSculpture",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "abstract twisted chrome sculpture on a black marble plinth, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    7,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A4_DECO_Helipad",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 4,
+   "prompt": "rooftop helipad circle platform with edge lights and a blank centre, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    1,
+    20
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DROP_MoneyPrinter",
+   "kind": "mesh",
+   "category": "DROP",
+   "act": 5,
+   "prompt": "industrial banknote printing press with a paper feed and stacked output tray, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    7,
+    6,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_UPG_SatelliteDish",
+   "kind": "mesh",
+   "category": "UPG",
+   "act": 5,
+   "prompt": "white parabolic satellite dish on a motorised mount, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    7,
+    7,
+    6
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_COLL_Vault",
+   "kind": "mesh",
+   "category": "COLL",
+   "act": 5,
+   "prompt": "art deco bank vault door with a separate spoked wheel handle and a separate dial, bronze and green marble, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    7,
+    8,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_CONV_GoldRail",
+   "kind": "mesh",
+   "category": "CONV",
+   "act": 5,
+   "prompt": "polished brass rail conveyor section with gold trim, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    2,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_Penthouse",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "glass penthouse corner section with floor to ceiling windows and a steel frame, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    12,
+    20
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_GoldBars",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "neat stack of twelve gold bullion bars, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    2,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_PrivateJet",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "small private jet with separate wings and landing gear, glossy white, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    30,
+    10,
+    28
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_Yacht",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "small luxury motor yacht hull with an upper deck, white and teak, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    40,
+    12,
+    12
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_MarbleStatue",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "white marble statue of a businessman with one arm raised in triumph, on a plinth, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    9,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_ChampagneCart",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "gold trolley cart with a champagne bucket and glasses, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    4,
+    4,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_GoldGlobe",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "gilded world globe on a curved brass stand, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    5,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_BiometricGate",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "glass biometric security gate pair with a scanner pillar, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    6,
+    6,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_A5_DECO_TrophyCabinet",
+   "kind": "mesh",
+   "category": "DECO",
+   "act": 5,
+   "prompt": "tall empty glass trophy display cabinet with lit shelves, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    8,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BuildingBrick",
+   "kind": "mesh",
+   "category": "BuildingBrick",
+   "act": 0,
+   "prompt": "modular old brick apartment building block, twenty stud module, fire escape and window rows, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    20,
+    20
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BuildingConcrete",
+   "kind": "mesh",
+   "category": "BuildingConcrete",
+   "act": 0,
+   "prompt": "modular nineteen seventies concrete office block module, horizontal window bands, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    20,
+    20
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BuildingGlass",
+   "kind": "mesh",
+   "category": "BuildingGlass",
+   "act": 0,
+   "prompt": "modular corporate glass curtain wall tower module, blue tinted panes, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    20,
+    20
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Sidewalk",
+   "kind": "mesh",
+   "category": "Sidewalk",
+   "act": 0,
+   "prompt": "modular concrete sidewalk slab section with a kerb edge, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    1,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Manhole",
+   "kind": "mesh",
+   "category": "Manhole",
+   "act": 0,
+   "prompt": "cast iron manhole cover disc with a radial pattern, no text, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    1,
+    3
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BillboardPole",
+   "kind": "mesh",
+   "category": "BillboardPole",
+   "act": 0,
+   "prompt": "large blank billboard panel on two steel support poles with a catwalk, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    16,
+    22,
+    2
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BillboardWall",
+   "kind": "mesh",
+   "category": "BillboardWall",
+   "act": 0,
+   "prompt": "blank wall mounted billboard frame with a lighting bar, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    14,
+    8,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_TrafficLight",
+   "kind": "mesh",
+   "category": "TrafficLight",
+   "act": 0,
+   "prompt": "city traffic light on a curved pole with three lamp housings, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    14,
+    3
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_SignPost",
+   "kind": "mesh",
+   "category": "SignPost",
+   "act": 0,
+   "prompt": "blank street sign post with two empty rectangular plates, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    1,
+    8,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Sedan",
+   "kind": "mesh",
+   "category": "Sedan",
+   "act": 0,
+   "prompt": "generic four door city sedan car, matte paint, no badges, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    14,
+    5,
+    7
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Taxi",
+   "kind": "mesh",
+   "category": "Taxi",
+   "act": 0,
+   "prompt": "yellow city taxi sedan with a blank roof sign box, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    14,
+    5,
+    7
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Bus",
+   "kind": "mesh",
+   "category": "Bus",
+   "act": 0,
+   "prompt": "city transit bus with blank side advertising panels, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Car5",
+   "scale": [
+    30,
+    9,
+    9
+   ],
+   "decalSlot": "Right",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_BusStop",
+   "kind": "mesh",
+   "category": "BusStop",
+   "act": 0,
+   "prompt": "bus shelter with a bench and a blank advertising panel on one side, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    10,
+    8,
+    4
+   ],
+   "decalSlot": "Right",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Bench",
+   "kind": "mesh",
+   "category": "Bench",
+   "act": 0,
+   "prompt": "public park bench with wooden slats and cast iron ends, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    6,
+    3,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_TrashCan",
+   "kind": "mesh",
+   "category": "TrashCan",
+   "act": 0,
+   "prompt": "city street trash can, perforated metal cylinder with a lid ring, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    4,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Hydrant",
+   "kind": "mesh",
+   "category": "Hydrant",
+   "act": 0,
+   "prompt": "red fire hydrant with two side valves and a chain cap, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    3,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_PlanterTree",
+   "kind": "mesh",
+   "category": "PlanterTree",
+   "act": 0,
+   "prompt": "small city tree in a square concrete planter box, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    5,
+    12,
+    5
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_Lamppost",
+   "kind": "mesh",
+   "category": "Lamppost",
+   "act": 0,
+   "prompt": "straight city lamppost with a curved arm and a lamp head, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    14,
+    4
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_CITY_NeonVertical",
+   "kind": "mesh",
+   "category": "NeonVertical",
+   "act": 0,
+   "prompt": "blank vertical neon sign blade mounted on a wall bracket, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    10,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_Journal",
+   "kind": "mesh",
+   "category": "Journal",
+   "act": 0,
+   "prompt": "folded newspaper with a blank front page, slightly creased, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    1,
+    2
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_UsbKey",
+   "kind": "mesh",
+   "category": "UsbKey",
+   "act": 0,
+   "prompt": "small USB flash drive with a pulled off cap, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    1,
+    1,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_PhotoFrame",
+   "kind": "mesh",
+   "category": "PhotoFrame",
+   "act": 0,
+   "prompt": "small standing photo frame with a blank photo area, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    3,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_EmployeeBadge",
+   "kind": "mesh",
+   "category": "EmployeeBadge",
+   "act": 0,
+   "prompt": "employee ID badge on a lanyard, blank card face, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    3,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_LongReceipt",
+   "kind": "mesh",
+   "category": "LongReceipt",
+   "act": 0,
+   "prompt": "very long crumpled paper receipt roll trailing on the ground, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    1,
+    6
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_BusinessCard",
+   "kind": "mesh",
+   "category": "BusinessCard",
+   "act": 0,
+   "prompt": "single business card lying flat, blank face, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    1,
+    1
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_AudioCassette",
+   "kind": "mesh",
+   "category": "AudioCassette",
+   "act": 0,
+   "prompt": "audio cassette tape with a blank label area, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    1,
+    2
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_LORE_PillBottle",
+   "kind": "mesh",
+   "category": "PillBottle",
+   "act": 0,
+   "prompt": "tipped over prescription pill bottle with spilled white tablets, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    2,
+    3
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_ButtonBase",
+   "kind": "mesh",
+   "category": "ButtonBase",
+   "act": 0,
+   "prompt": "round illuminated floor button pad with a metal rim and a glowing centre disc, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    1,
+    4
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PlotBorder",
+   "kind": "mesh",
+   "category": "PlotBorder",
+   "act": 0,
+   "prompt": "low modular boundary kerb strip with a lit edge line, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    1,
+    1
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_LifeTotem",
+   "kind": "mesh",
+   "category": "LifeTotem",
+   "act": 0,
+   "prompt": "tall thin glowing glass column totem on a dark metal base, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    8,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_ExitDoor",
+   "kind": "mesh",
+   "category": "ExitDoor",
+   "act": 0,
+   "prompt": "heavy red emergency exit door in a steel frame with a push bar, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    4,
+    8,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 5000,
+   "hero": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_StockTicker",
+   "kind": "mesh",
+   "category": "StockTicker",
+   "act": 0,
+   "prompt": "narrow dark display strip panel for a scrolling stock ticker, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    20,
+    3,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PRD_Lemon",
+   "kind": "mesh",
+   "category": "PRD",
+   "act": 0,
+   "prompt": "single bright yellow lemon, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    1,
+    1,
+    1
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PRD_Can",
+   "kind": "mesh",
+   "category": "PRD",
+   "act": 0,
+   "prompt": "sealed aluminium drinks can with a blank wrap, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    1,
+    2,
+    1
+   ],
+   "decalSlot": "Front",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PRD_Crate",
+   "kind": "mesh",
+   "category": "PRD",
+   "act": 0,
+   "prompt": "small sealed cardboard shipping box with tape, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    2,
+    2
+   ],
+   "decalSlot": "Top",
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PRD_DataIngot",
+   "kind": "mesh",
+   "category": "PRD",
+   "act": 0,
+   "prompt": "glowing translucent data block ingot with circuit etching, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    2,
+    1,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "MSH_GP_PRD_Briefcase",
+   "kind": "mesh",
+   "category": "PRD",
+   "act": 0,
+   "prompt": "closed metal briefcase with combination latches, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "Body1",
+   "scale": [
+    3,
+    1,
+    2
+   ],
+   "decalSlot": null,
+   "maxTriangles": 2000,
+   "hero": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Worker",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "factory worker in blue coveralls with a yellow hard hat, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "hard hat",
+    "work gloves"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Vendor",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "street vendor in an apron over a t-shirt, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "apron",
+    "cap"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Clerk",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "shop clerk in a green apron with a name badge, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "apron",
+    "badge"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_OfficeWorker",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "office worker in a white shirt with a lanyard badge, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "lanyard badge",
+    "headset"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Executive",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "executive in a dark tailored suit carrying a briefcase, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "briefcase",
+    "wristwatch"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Investor",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "elderly investor in a brown three piece suit with a pocket watch, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "pocket watch",
+    "spectacles"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Homeless",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "man in a worn long coat with a blanket over the shoulders, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "blanket",
+    "wool hat"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "CHAR_Mascot",
+   "kind": "character",
+   "category": "CHAR",
+   "act": 0,
+   "prompt": "person in a smiling dollar bill mascot costume, slightly unsettling, low poly stylized, chunky proportions, flat colors, clean topology, game asset, no text on the model",
+   "schema": "R15",
+   "scale": [
+    4,
+    6,
+    2
+   ],
+   "accessories": [
+    "mascot head"
+   ],
+   "note": "Générer sur base de rig R15 standard, jamais en mesh libre : sinon aucune animation ne s'applique. Accessoires en mesh attachés par Motor6D.",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_WorkerLift",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "worker lifts a heavy box from the floor to chest height and sets it down",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_WorkerIdle",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "worker stands and wipes sweat from the forehead with a forearm",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_ClerkScan",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "clerk scans an item across a counter scanner and slides it aside",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_OfficeType",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "office worker types at a keyboard with rounded hunched shoulders",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_ExecPhone",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "executive paces while talking into a phone held to the ear",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_InvestorNod",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "elderly man nods slowly with arms crossed",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_NPC_Patrol",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "security guard walks a short patrol and looks left and right",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_CountCash",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character counts a stack of banknotes held in one hand",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_CheckWatch",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character glances at a wristwatch then lets the arm drop",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_Handshake",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character extends a hand forward for a business handshake",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_Celebrate",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character raises both arms in a short triumphant celebration",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": false,
+   "note": "Passe automatique suffisante",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_Exhausted",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character stands with drooped shoulders, head low, breathing heavily",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": true,
+   "note": "Retouche manuelle obligatoire dans l'Animation Editor",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_Collapse",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character sinks slowly to the knees then sits back against nothing",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": true,
+   "note": "Retouche manuelle obligatoire dans l'Animation Editor",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "ANM_PLR_WakeUp",
+   "kind": "animation",
+   "category": "ANM",
+   "act": 0,
+   "prompt": "character pushes up from the ground and stands unsteadily",
+   "rig": "R15",
+   "autoPass": true,
+   "manualPolish": true,
+   "note": "Retouche manuelle obligatoire dans l'Animation Editor",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_LOGO_Main",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "logo of the game, wordmark on a neon city skyline silhouette",
+   "size": [
+    1024,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_LOGO_Square",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "square app icon version of the logo, readable at 64 pixels",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_LOGO_Mono",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "single colour version of the logo for overlays",
+   "size": [
+    1024,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_THUMB_A",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "game thumbnail: a lone figure at a lemonade stand dwarfed by neon towers, dramatic rim light",
+   "size": [
+    1920,
+    1080
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_THUMB_B",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "game thumbnail: split composition, cardboard box on the left, penthouse on the right",
+   "size": [
+    1920,
+    1080
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_THUMB_C",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "game thumbnail: close up of a hand holding a lemon in front of a stock ticker wall",
+   "size": [
+    1920,
+    1080
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_HUD_Cash",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "cash icon for the HUD, coin stack, flat style",
+   "size": [
+    256,
+    256
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_HUD_Life",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "subtle pulse line icon for the silent Life gauge",
+   "size": [
+    256,
+    256
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_HUD_Shop",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "shop icon, shopping bag, flat style",
+   "size": [
+    256,
+    256
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_HUD_Journal",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "folded newspaper icon, flat style",
+   "size": [
+    256,
+    256
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_HUD_Board",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "stock index icon, rising bar chart, flat style",
+   "size": [
+    256,
+    256
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_UI_Renaissance",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "full screen art for the rebirth screen: dawn light over an empty alley",
+   "size": [
+    1920,
+    1080
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_PASS_DoubleCash",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "gamepass icon for double cash, two coin stacks",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_PASS_AutoCollect",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "gamepass icon for auto collector, a hand and a conveyor",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_PASS_Skins",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "gamepass icon for base skins, four colour swatches",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_PASS_FastRebirth",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "gamepass icon for fast rebirth, an open exit door with light",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_1",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a soft drink company, retro red and cream",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_2",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a logistics company, blue arrow monogram",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_3",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a fast food chain, yellow smiling wordmark",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_4",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a bank, navy shield with an eagle",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_5",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a tech firm, minimal lowercase wordmark",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_6",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: an energy drink, aggressive lightning mark",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_7",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a pharmaceutical company, teal cross",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_BRAND_8",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "fictional brand logo: a real estate holding, gold serif monogram",
+   "size": [
+    512,
+    512
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J01",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 01, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J02",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 02, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J03",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 03, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J04",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 04, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J05",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 05, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J06",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 06, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J07",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 07, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J08",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 08, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J09",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 09, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J10",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 10, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J11",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 11, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "TEX_NEWS_J12",
+   "kind": "image",
+   "category": "TEX",
+   "act": 0,
+   "prompt": "newspaper front page layout for journal 12, masthead and blank column blocks",
+   "size": [
+    1024,
+    1024
+   ],
+   "tool": "Claude Design",
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Act1",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "sparse lo-fi hip hop loop, rain, single muted piano motif, 70 bpm, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Act2",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "same motif on a brighter electric piano with a light shuffle beat, 88 bpm, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Act3",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "same motif on industrial percussion and a distorted bass, 104 bpm, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Act4",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "same motif on synth arpeggios with a driving kick, compressed, 120 bpm, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Act5",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "same motif maximally compressed, saturated synth brass, 132 bpm, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_MUS_Renaissance",
+   "kind": "audio",
+   "category": "MUS",
+   "act": 0,
+   "prompt": "same motif slowed to half tempo on solo piano, relieved and sad, 60 bpm",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_AMB_Alley",
+   "kind": "audio",
+   "category": "AMB",
+   "act": 0,
+   "prompt": "quiet rainy back alley ambience, distant traffic, dripping water, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_AMB_Street",
+   "kind": "audio",
+   "category": "AMB",
+   "act": 0,
+   "prompt": "busy shopping street ambience, footsteps, chatter, a door chime, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_AMB_Factory",
+   "kind": "audio",
+   "category": "AMB",
+   "act": 0,
+   "prompt": "factory floor ambience, machinery hum, hydraulic hiss, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_AMB_Office",
+   "kind": "audio",
+   "category": "AMB",
+   "act": 0,
+   "prompt": "open plan office ambience, keyboards, printer, muffled calls, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_AMB_Penthouse",
+   "kind": "audio",
+   "category": "AMB",
+   "act": 0,
+   "prompt": "near silent penthouse ambience, air conditioning, faint city far below, loopable",
+   "tool": "Suno",
+   "loop": true,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Purchase",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "short satisfying purchase confirm chime",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Denied",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "short soft denial thud, not harsh",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Collect",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "coins sliding into a jar, short",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Conveyor",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "short conveyor belt roller loop",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Press",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "hydraulic press stamping down once",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_SlotMachine",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "slot machine reel stopping, three clicks",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Register",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "vintage cash register drawer opening with a bell",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Rent",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "paper envelope dropping through a letterbox slot",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_TierUp",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "short ascending fanfare, brass, two seconds",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_LifeLow",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "low sub bass swell warning, subtle",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Heartbeat",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "single slow heartbeat thump",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Phone",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "office desk phone ringing twice",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Elevator",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "elevator arrival ding and door slide",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Applause",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "canned television applause, three seconds",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_UI_Jingle",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "three second cheerful advertising jingle, deliberately repetitive",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_BoomFanfare",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "upbeat market boom fanfare, two seconds",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_CrashAlarm",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "market crash alarm klaxon, two seconds",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_Opa",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "corporate takeover alert sting, cold synth",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_Journal",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "paper page turn, soft",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_Badge",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "short bright badge unlock chime",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_Burnout",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "everything cutting to silence with a single low thud",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  },
+  {
+   "id": "SFX_EVT_WakeUp",
+   "kind": "audio",
+   "category": "SFX",
+   "act": 0,
+   "prompt": "distant morning birdsong and a slow breath in",
+   "tool": "ElevenLabs",
+   "loop": false,
+   "status": "pending",
+   "assetId": 0
+  }
+ ]
+}
