@@ -1,0 +1,128 @@
+name: Deploy
+
+# Publication du place sur Roblox via Open Cloud.
+#
+# Secrets à créer dans Settings > Secrets and variables > Actions :
+#   ROBLOX_API_KEY   clé Open Cloud avec la permission universe-places:write sur TON univers,
+#                    restreinte à l'IP des runners si ton organisation le permet
+#   UNIVERSE_ID      identifiant de l'univers
+#   PLACE_ID         identifiant du place racine
+#
+# L'environnement `production` impose une validation manuelle avant chaque mise en ligne.
+# La garder au début : une publication ratée se voit par les joueurs, pas par la CI.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: "Saved (brouillon) ou Published (en ligne)"
+        required: true
+        default: Saved
+        type: choice
+        options: [Saved, Published]
+  push:
+    branches: [main]
+    paths:
+      - "games/american-dream/**"
+      - ".github/workflows/deploy.yml"
+
+concurrency:
+  group: deploy-american-dream
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Construire le place
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: games/american-dream
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          manifest-path: games/american-dream/rokit.toml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Types Roblox
+        run: |
+          curl -sS --retry 3 --max-time 120 -o ../../tools/globalTypes.d.luau \
+            https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
+
+      - name: Porte de qualité
+        run: |
+          selene generate-roblox-std
+          selene src tests plugin
+          rojo sourcemap default.project.json -o sourcemap.json
+          luau-lsp analyze --definitions=../../tools/globalTypes.d.luau --sourcemap=sourcemap.json \
+            --base-luaurc=.luaurc --ignore="**/Vendor/**" src
+          lune run tests/run.luau
+
+      - name: Build
+        run: |
+          mkdir -p build
+          rojo build default.project.json -o build/AmericanDream.rbxl
+          size=$(stat -c %s build/AmericanDream.rbxl)
+          echo "taille : $size octets"
+          if [ "$size" -lt 51200 ]; then
+            echo "::error::build trop petit ($size octets) : rien ne sera publié"
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: place
+          path: games/american-dream/build/AmericanDream.rbxl
+          retention-days: 7
+
+  deploy:
+    name: Publier sur Roblox
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: place
+
+      - name: Vérifier les secrets
+        env:
+          API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+          UNIVERSE_ID: ${{ secrets.UNIVERSE_ID }}
+          PLACE_ID: ${{ secrets.PLACE_ID }}
+        run: |
+          missing=""
+          [ -z "$API_KEY" ] && missing="$missing ROBLOX_API_KEY"
+          [ -z "$UNIVERSE_ID" ] && missing="$missing UNIVERSE_ID"
+          [ -z "$PLACE_ID" ] && missing="$missing PLACE_ID"
+          if [ -n "$missing" ]; then
+            echo "::error::secrets manquants :$missing"
+            echo "Les créer sur create.roblox.com > Open Cloud > API Keys, puis dans Settings > Secrets."
+            exit 1
+          fi
+
+      - name: Publier
+        env:
+          API_KEY: ${{ secrets.ROBLOX_API_KEY }}
+          UNIVERSE_ID: ${{ secrets.UNIVERSE_ID }}
+          PLACE_ID: ${{ secrets.PLACE_ID }}
+          VERSION_TYPE: ${{ inputs.version_type || 'Saved' }}
+        run: |
+          echo "publication en $VERSION_TYPE de l'univers $UNIVERSE_ID, place $PLACE_ID"
+          code=$(curl -sS -o response.json -w "%{http_code}" \
+            -X POST \
+            -H "x-api-key: $API_KEY" \
+            -H "Content-Type: application/octet-stream" \
+            --data-binary @AmericanDream.rbxl \
+            "https://apis.roblox.com/universes/v1/$UNIVERSE_ID/places/$PLACE_ID/versions?versionType=$VERSION_TYPE")
+          echo "HTTP $code"
+          cat response.json
+          echo
+          if [ "$code" != "200" ]; then
+            echo "::error::publication refusée (HTTP $code)"
+            exit 1
+          fi
+          version=$(python3 -c "import json; print(json.load(open('response.json')).get('versionNumber', '?'))")
+          echo "::notice::version $version publiée en $VERSION_TYPE"
+          echo "### Publié — version $version ($VERSION_TYPE)" >> "$GITHUB_STEP_SUMMARY"

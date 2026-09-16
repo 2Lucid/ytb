@@ -9,6 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ProfileStore = require(script.Parent.Parent.Vendor.ProfileStore)
 local SaveSchema = require(ReplicatedStorage.Shared.Sim.SaveSchema)
+local Economy = require(ReplicatedStorage.Shared.Config.Economy)
 local Signal = require(ReplicatedStorage.Shared.Util.Signal)
 local Types = require(ReplicatedStorage.Shared.Types)
 
@@ -92,6 +93,13 @@ local function onPlayerRemoving(player: Player)
 end
 
 function DataService.Init()
+	-- Le kit partagé ne connaît pas les bornes de CE jeu : on les lui donne.
+	-- Un jeu sans jauge de Vie ni paliers garde simplement les valeurs par défaut.
+	local config = Economy :: any
+	SaveSchema.configure({
+		maxLife = if config.Life then config.Life.max else nil,
+		maxTier = if config.maxAct then config.maxAct() elseif config.maxTier then config.maxTier() else nil,
+	})
 	usingMock = not dataStoresAvailable()
 	local base = ProfileStore.New(SaveSchema.STORE_NAME, SaveSchema.template())
 	store = usingMock and base.Mock or base

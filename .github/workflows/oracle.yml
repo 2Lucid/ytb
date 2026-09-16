@@ -1,0 +1,126 @@
+name: ORACLE
+
+# Ingestion et scoring des tendances Roblox, en continu, sans serveur à gérer.
+# La base SQLite est conservée entre les passages via le cache GitHub Actions.
+#
+# Secret optionnel : DISCORD_WEBHOOK pour recevoir les alertes.
+# Sans lui, les résultats restent dans le résumé du passage.
+#
+# Limite connue : le cache d'Actions n'est pas un stockage durable (éviction après 7 jours
+# d'inactivité, 10 Go par dépôt). Pour un historique long, faire tourner le cron sur une
+# machine à soi : voir oracle/README.md.
+
+on:
+  schedule:
+    # toutes les heures : assez pour la vélocité, sans matraquer l'API
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Inclure la mesure de saturation et les signaux externes"
+        type: boolean
+        default: false
+
+concurrency:
+  group: oracle
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    name: Ingérer et scorer
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Restaurer la base
+        uses: actions/cache/restore@v4
+        with:
+          path: oracle/oracle.db
+          key: oracle-db-${{ github.run_id }}
+          restore-keys: |
+            oracle-db-
+
+      - name: Ingestion
+        working-directory: oracle
+        run: python3 ingest.py --db oracle.db
+
+      - name: Saturation et signaux externes
+        working-directory: oracle
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+          FORCE_FULL: ${{ inputs.full }}
+        run: |
+          # La recherche coûte plus cher que l'ingestion : une fois toutes les six heures suffit,
+          # et la saturation d'un concept ne bouge pas d'heure en heure.
+          hour=$(date -u +%-H)
+          if [ "$FORCE_FULL" = "true" ] || [ $((hour % 6)) -eq 0 ]; then
+            python3 clones.py --db oracle.db --limit 30
+            python3 external.py --db oracle.db --limit 15 --sources youtube trends || true
+          else
+            echo "passage léger : saturation et signaux externes toutes les six heures seulement"
+          fi
+
+      - name: Scoring
+        working-directory: oracle
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            python3 features.py --db oracle.db --top 20 --webhook "$DISCORD_WEBHOOK" | tee /tmp/scores.txt
+          else
+            python3 features.py --db oracle.db --top 20 | tee /tmp/scores.txt
+          fi
+
+      - name: Enregistrer les refus
+        working-directory: oracle
+        run: |
+          # Sans les refus, la régression n'apprend que sur les succès et conclut que tout est bon.
+          python3 predictions.py --db oracle.db auto --limit 10
+
+      - name: Briefs des fenêtres ouvertes
+        working-directory: oracle
+        run: |
+          mkdir -p ../forge/briefs
+          python3 brief.py --db oracle.db --top 3 --out ../forge/briefs || true
+          ls -1 ../forge/briefs 2>/dev/null || echo "aucun brief : aucune fenêtre ouverte"
+
+      - name: Résumé
+        run: |
+          {
+            echo "## ORACLE"
+            echo '```'
+            head -25 /tmp/scores.txt
+            echo '```'
+            if ls forge/briefs/*.brief.json >/dev/null 2>&1; then
+              echo "### Briefs produits"
+              for f in forge/briefs/*.brief.json; do
+                python3 -c "
+          import json, sys
+          b = json.load(open('$f'))
+          print(f\"- **{b['concept']}** — {b['verdict']['call']} : {b['verdict']['why']}\")
+          "
+              done
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Sauvegarder la base
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: oracle/oracle.db
+          key: oracle-db-${{ github.run_id }}
+
+      - name: Publier les briefs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: briefs-${{ github.run_id }}
+          path: forge/briefs/
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,163 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  luau:
+    name: Jeu — lint, typecheck, tests, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: games/american-dream
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer les outils Luau
+        uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          manifest-path: games/american-dream/rokit.toml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cacher les types Roblox
+        uses: actions/cache@v4
+        with:
+          path: tools/globalTypes.d.luau
+          key: roblox-types-${{ github.run_id }}
+          restore-keys: roblox-types-
+
+      - name: Télécharger les types Roblox
+        run: |
+          if [ ! -s ../../tools/globalTypes.d.luau ]; then
+            curl -sS --retry 3 --max-time 120 -o ../../tools/globalTypes.d.luau \
+              https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
+          fi
+          test -s ../../tools/globalTypes.d.luau
+
+      - name: Bibliothèque standard selene
+        run: |
+          # generate-roblox-std télécharge le dump d'API : si l'appel échoue, on n'invente rien,
+          # on échoue franchement plutôt que de linter avec une std incomplète.
+          selene generate-roblox-std
+
+      - name: Lint (selene)
+        run: selene src tests plugin
+
+      - name: Sourcemap
+        run: rojo sourcemap default.project.json -o sourcemap.json
+
+      - name: Typecheck strict (luau-lsp)
+        run: |
+          luau-lsp analyze \
+            --definitions=../../tools/globalTypes.d.luau \
+            --sourcemap=sourcemap.json \
+            --base-luaurc=.luaurc \
+            --ignore="**/Vendor/**" \
+            src
+
+      - name: Typecheck du plugin
+        working-directory: games/american-dream/plugin
+        run: |
+          rojo sourcemap assetforge.project.json -o sourcemap.json
+          luau-lsp analyze \
+            --definitions=../../../tools/globalTypes.d.luau \
+            --sourcemap=sourcemap.json \
+            --base-luaurc=.luaurc \
+            AssetForge
+
+      - name: Tests (Lune)
+        run: lune run tests/run.luau
+
+      - name: Build
+        run: |
+          mkdir -p build
+          rojo build default.project.json -o build/AmericanDream.rbxl
+          rojo build plugin/assetforge.project.json -o build/AssetForge.rbxm
+          size=$(stat -c %s build/AmericanDream.rbxl)
+          echo "taille du place : $size octets"
+          # un build de moins de 50 Ko veut dire que le projet Rojo est vide : c'est un échec,
+          # pas un succès rapide.
+          if [ "$size" -lt 51200 ]; then
+            echo "::error::build trop petit ($size octets) : projet Rojo vide ?"
+            exit 1
+          fi
+
+      - name: Publier les artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.sha }}
+          path: |
+            games/american-dream/build/AmericanDream.rbxl
+            games/american-dream/build/AssetForge.rbxm
+          retention-days: 14
+
+  python:
+    name: ORACLE et LEDGER — tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Vérifier l'absence de dépendances
+        run: |
+          # ORACLE et LEDGER doivent tourner sur une machine nue : aucun requirements.txt,
+          # aucun import tiers. C'est ce qui permet de les lancer n'importe où sans installation.
+          if ls oracle/requirements*.txt ledger/requirements*.txt 2>/dev/null | grep -q .; then
+            echo "::error::une dépendance a été introduite : ORACLE et LEDGER doivent rester en stdlib"
+            exit 1
+          fi
+          python3 - <<'PY'
+          import ast, pathlib, sys
+          allowed = set(sys.stdlib_module_names)
+          local = {p.stem for p in pathlib.Path("oracle").glob("*.py")} | {p.stem for p in pathlib.Path("ledger").glob("*.py")}
+          bad = []
+          for path in list(pathlib.Path("oracle").glob("*.py")) + list(pathlib.Path("ledger").glob("*.py")):
+              for node in ast.walk(ast.parse(path.read_text())):
+                  names = []
+                  if isinstance(node, ast.Import):
+                      names = [a.name.split(".")[0] for a in node.names]
+                  elif isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
+                      names = [node.module.split(".")[0]]
+                  for name in names:
+                      if name not in allowed and name not in local:
+                          bad.append(f"{path}: {name}")
+          if bad:
+              print("::error::imports non standard :", "; ".join(bad))
+              sys.exit(1)
+          print("stdlib uniquement : confirmé")
+          PY
+
+      - name: Tests ORACLE
+        run: python3 oracle/test_oracle.py
+
+      - name: Tests LEDGER
+        run: python3 ledger/test_ledger.py
+
+      - name: Tests du générateur FORGE
+        run: python3 forge/generator/test_generator.py
+
+      - name: Manifest d'assets reproductible
+        run: |
+          # Le manifest est généré : s'il diverge du générateur, c'est qu'il a été édité à la main.
+          cp games/american-dream/assets/manifest.json /tmp/manifest-before.json
+          python3 forge/assetforge/build_manifest.py --preserve >/dev/null
+          python3 - <<'PY'
+          import json, sys
+          before = json.load(open("/tmp/manifest-before.json"))
+          after = json.load(open("games/american-dream/assets/manifest.json"))
+          strip = lambda m: [{k: v for k, v in a.items() if k != "generatedAt"} for a in m["assets"]]
+          if strip(before) != strip(after):
+              print("::error::le manifest diverge du générateur : relancer forge/assetforge/build_manifest.py")
+              sys.exit(1)
+          print(f"manifest reproductible : {len(after['assets'])} assets")
+          PY

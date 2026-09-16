@@ -1,0 +1,144 @@
+name: LEDGER
+
+# Agrégation hebdomadaire des métriques et proposition de réglage de l'économie.
+# La proposition arrive en pull request : rien n'est appliqué sans relecture.
+#
+# Ce workflow suppose que la base LEDGER est accessible. Deux montages possibles :
+#   - collecteur hébergé et base récupérée par l'artefact d'un autre workflow ;
+#   - export manuel déposé dans ledger/ledger.db avant de lancer à la main.
+# Sans base, le workflow s'arrête proprement en le disant.
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # lundi matin
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Fenêtre d'analyse en jours"
+        default: "7"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  tune:
+    name: Diagnostiquer et proposer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Restaurer la base
+        uses: actions/cache/restore@v4
+        with:
+          path: ledger/ledger.db
+          key: ledger-db-${{ github.run_id }}
+          restore-keys: ledger-db-
+
+      - name: Y a-t-il des données ?
+        id: check
+        run: |
+          if [ ! -s ledger/ledger.db ]; then
+            echo "::notice::aucune base LEDGER : rien à analyser cette semaine"
+            echo "has_data=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          players=$(python3 -c "
+          import sqlite3
+          db = sqlite3.connect('ledger/ledger.db')
+          try:
+              print(db.execute('SELECT COUNT(DISTINCT user_id) FROM player_days').fetchone()[0])
+          except sqlite3.OperationalError:
+              print(0)
+          ")
+          echo "joueurs connus : $players"
+          echo "has_data=true" >> "$GITHUB_OUTPUT"
+
+      - name: Agréger et diagnostiquer
+        if: steps.check.outputs.has_data == 'true'
+        run: |
+          cd ledger
+          python3 collector.py rollup --db ledger.db
+          python3 collector.py report --db ledger.db --days "${{ inputs.days || 7 }}" | tee /tmp/report.txt
+          python3 tune.py --db ledger.db --days "${{ inputs.days || 7 }}" | tee /tmp/tune.txt
+
+      - name: Appliquer la proposition
+        if: steps.check.outputs.has_data == 'true'
+        id: apply
+        run: |
+          cd ledger
+          proposal=$(python3 -c "
+          import sqlite3
+          db = sqlite3.connect('ledger.db')
+          row = db.execute('SELECT id FROM tuning_proposals WHERE applied = 0 ORDER BY id DESC LIMIT 1').fetchone()
+          print(row[0] if row else '')
+          ")
+          if [ -z "$proposal" ]; then
+            echo "aucune proposition en attente"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 tune.py --db ledger.db --apply --proposal "$proposal" || {
+            echo "proposition sans changement applicable"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "proposal=$proposal" >> "$GITHUB_OUTPUT"
+
+      - name: Revalider le jeu
+        if: steps.apply.outputs.changed == 'true'
+        uses: CompeyDev/setup-rokit@v0.1.2
+        with:
+          manifest-path: games/american-dream/rokit.toml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tests d'économie
+        if: steps.apply.outputs.changed == 'true'
+        working-directory: games/american-dream
+        run: |
+          # Le réglage n'est proposé que s'il garde la progression dans les clous.
+          lune run tests/run.luau
+
+      - name: Ouvrir la pull request
+        if: steps.apply.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ledger/reglage-economie
+          title: "Régler l'économie sur les mesures de la semaine"
+          commit-message: |
+            Régler l'économie sur les mesures de la semaine
+
+            Proposition ${{ steps.apply.outputs.proposal }} de LEDGER, validée par les tests d'économie.
+          body-path: /tmp/tune.txt
+          add-paths: games/american-dream/src/shared/Config/Economy.luau
+          delete-branch: true
+
+      - name: Résumé
+        if: always()
+        run: |
+          {
+            echo "## LEDGER"
+            if [ -s /tmp/report.txt ]; then
+              echo '```'
+              cat /tmp/report.txt
+              echo '```'
+            fi
+            if [ -s /tmp/tune.txt ]; then
+              echo "### Diagnostic"
+              echo '```'
+              cat /tmp/tune.txt
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Sauvegarder la base
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ledger/ledger.db
+          key: ledger-db-${{ github.run_id }}

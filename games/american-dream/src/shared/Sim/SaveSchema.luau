@@ -3,7 +3,6 @@
 -- Règles ProfileStore : pas de tables mixtes, pas de trous numériques, pas d'Instances ni de userdata.
 
 local Types = require(script.Parent.Parent.Types)
-local Economy = require(script.Parent.Parent.Config.Economy)
 
 type PlayerData = Types.PlayerData
 
@@ -13,11 +12,21 @@ SaveSchema.VERSION = 1
 SaveSchema.STORE_NAME = "PlayerData_v1"
 SaveSchema.LAYOUT_VARIANTS = 5
 
+-- Bornes du kit partagé. Un jeu qui a une jauge différente appelle SaveSchema.configure.
+SaveSchema.MAX_LIFE = 100
+SaveSchema.MAX_TIER = 5
+
+-- Adapte les bornes au jeu courant. À appeler une fois au démarrage si les valeurs diffèrent.
+function SaveSchema.configure(options: { maxLife: number?, maxTier: number? })
+	SaveSchema.MAX_LIFE = options.maxLife or SaveSchema.MAX_LIFE
+	SaveSchema.MAX_TIER = options.maxTier or SaveSchema.MAX_TIER
+end
+
 function SaveSchema.template(): PlayerData
 	return {
 		version = SaveSchema.VERSION,
 		cash = 0,
-		life = Economy.Life.max,
+		life = SaveSchema.MAX_LIFE,
 		renaissances = 0,
 		highestActThisLife = 1,
 		highestActEver = 1,
@@ -69,10 +78,10 @@ end
 function SaveSchema.sanitize(data: { [string]: any }): PlayerData
 	local template = SaveSchema.template()
 	data.cash = clampNumber(data.cash, 0, 1e18, 0)
-	data.life = clampNumber(data.life, 0, Economy.Life.max, Economy.Life.max)
+	data.life = clampNumber(data.life, 0, SaveSchema.MAX_LIFE, SaveSchema.MAX_LIFE)
 	data.renaissances = clampNumber(data.renaissances, 0, 10000, 0)
-	data.highestActThisLife = clampNumber(data.highestActThisLife, 1, Economy.maxAct(), 1)
-	data.highestActEver = clampNumber(data.highestActEver, 1, Economy.maxAct(), 1)
+	data.highestActThisLife = clampNumber(data.highestActThisLife, 1, SaveSchema.MAX_TIER, 1)
+	data.highestActEver = clampNumber(data.highestActEver, 1, SaveSchema.MAX_TIER, 1)
 	if type(data.plot) ~= "table" then
 		data.plot = template.plot
 	end
