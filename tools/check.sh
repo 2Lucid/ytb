@@ -29,10 +29,15 @@ if command -v luau-lsp >/dev/null; then
   if [ ! -s "$DEFS" ]; then
     curl -sS --retry 3 --max-time 60 -o "$DEFS" "https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau" || echo "types Roblox non téléchargés"
   fi
-  ANALYZE_TARGETS="src"
-  [ -d plugin ] && ANALYZE_TARGETS="$ANALYZE_TARGETS plugin"
-  luau-lsp analyze --definitions="$DEFS" --sourcemap=sourcemap.json --base-luaurc=.luaurc --ignore="**/Vendor/**" --ignore="**/_Index/**" $ANALYZE_TARGETS 2>&1 | tail -60
+  luau-lsp analyze --definitions="$DEFS" --sourcemap=sourcemap.json --base-luaurc=.luaurc --ignore="**/Vendor/**" --ignore="**/_Index/**" src 2>&1 | tail -60
   [ "${PIPESTATUS[0]}" -eq 0 ] || fail=1
+  # Le plugin est un projet Rojo à part : son sourcemap doit être généré et lu depuis son dossier,
+  # sinon les chemins relatifs ne se résolvent pas et tous les require passent pour invalides.
+  if [ -d plugin ] && [ -f plugin/assetforge.project.json ]; then
+    ( cd plugin \
+      && rojo sourcemap assetforge.project.json -o sourcemap.json >/dev/null \
+      && luau-lsp analyze --definitions="$DEFS" --sourcemap=sourcemap.json --base-luaurc=.luaurc AssetForge 2>&1 | tail -30 ) || fail=1
+  fi
 else echo "luau-lsp absent"; fail=1; fi
 
 step "4/5 tests Lune"

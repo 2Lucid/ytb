@@ -4,13 +4,18 @@ return function(t, loader)
 	local EconomyMath = loader.shared("Sim.EconomyMath")
 
 	t.describe("Config/Economy", function()
-		t.it("a 5 actes avec les coûts de la spec", function()
+		-- Ces tests décrivent la FORME de la progression, pas des chiffres figés : le job de réglage
+		-- de LEDGER ajuste les coûts sur la rétention réelle, et il doit pouvoir le faire sans
+		-- casser la suite. Un test qui épingle « 500 » bloquerait la boucle d'apprentissage.
+		t.it("a 5 actes dont le premier est gratuit et des coûts strictement croissants", function()
 			t.expect(#Economy.Tiers).toBe(5)
-			local costs = {}
-			for _, tier in Economy.Tiers do
-				table.insert(costs, tier.unlockCost)
+			t.expect(Economy.Tiers[1].unlockCost).toBe(0)
+			for act = 3, 5 do
+				t.expect(Economy.Tiers[act].unlockCost).toBeGreaterThan(Economy.Tiers[act - 1].unlockCost)
 			end
-			t.expect(costs).toEqual({ 0, 500, 7500, 120000, 2500000 })
+			t.expect(Economy.Tiers[2].unlockCost).toBeGreaterThan(0)
+			-- l'acte 5 doit rester un objectif lointain : au moins mille fois l'entrée de l'acte 2
+			t.expect(Economy.Tiers[5].unlockCost / Economy.Tiers[2].unlockCost).toBeGreaterThan(1000)
 		end)
 		t.it("garde un ratio coût/revenu d'environ x12 par acte", function()
 			for act = 2, 4 do
@@ -115,8 +120,10 @@ return function(t, loader)
 			local rich = { A1_UNLOCK = true, A2_UNLOCK = true, A3_UNLOCK = true }
 			t.expect(EconomyMath.cashPackAmount(rich, 5)).toBeGreaterThan(EconomyMath.cashPackAmount(owned, 5))
 		end)
-		t.it("évalue la valeur nette", function()
-			t.expect(EconomyMath.netWorth({ A1_UNLOCK = true, A2_UNLOCK = true }, 100)).toBe(600)
+		t.it("évalue la valeur nette : cash plus le prix de ce qu'on possède", function()
+			local expected = 100 + Economy.Tiers[1].unlockCost + Economy.Tiers[2].unlockCost
+			t.expect(EconomyMath.netWorth({ A1_UNLOCK = true, A2_UNLOCK = true }, 100)).toBe(expected)
+			t.expect(EconomyMath.netWorth({}, 100)).toBe(100)
 		end)
 	end)
 end
