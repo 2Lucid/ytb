@@ -1,0 +1,6 @@
+std = "roblox"
+exclude = ["src/server/Vendor/**", "tests/run.luau", "tests/loader.luau"]
+
+[lints]
+# Les tables de configuration ont volontairement des clés répétées dans des sous-tables.
+mixed_table = "allow"

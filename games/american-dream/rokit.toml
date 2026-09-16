@@ -1,0 +1,6 @@
+# Outils épinglés pour le PC du propriétaire et la CI (rokit install).
+[tools]
+rojo = "rojo-rbx/rojo@7.7.0"
+selene = "Kampfkarren/selene@0.31.0"
+lune = "lune-org/lune@0.10.5"
+luau-lsp = "JohnnyMorganz/luau-lsp@1.69.0"

@@ -1,0 +1,36 @@
+# Build outputs
+*.rbxl
+*.rbxlx
+*.rbxm
+!games/**/assets/baked/*.rbxm
+build/
+sourcemap.json
+
+# Tool caches
+.lune/
+.rojo/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+roblox.yml
+
+# Data (ORACLE / LEDGER runtime)
+oracle/*.db
+oracle/*.db-journal
+oracle/*.log
+oracle/data/
+ledger/data/
+*.sqlite
+
+# Secrets
+.env
+*.key
+secrets/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+tools/globalTypes.d.luau

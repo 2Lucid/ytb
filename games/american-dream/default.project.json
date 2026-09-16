@@ -1,0 +1,71 @@
+{
+  "name": "AmericanDream",
+  "globIgnorePaths": ["**/*.spec.luau", "**/README.md"],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": { "$path": "src/shared" },
+      "Remotes": { "$className": "Folder" },
+      "Assets": { "$className": "Folder" }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Server": { "$path": "src/server" }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "$properties": {
+        "CharacterWalkSpeed": 18,
+        "EnableMouseLockOption": true,
+        "LoadCharacterAppearance": true
+      },
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "Client": { "$path": "src/client" }
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "StreamingEnabled": true,
+        "StreamingMinRadius": 128,
+        "StreamingTargetRadius": 512,
+        "Gravity": 196.2
+      },
+      "Baseplate": { "$className": "Part", "$properties": {
+        "Anchored": true, "Size": [1024, 4, 1024], "CFrame": [0, -2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+        "Color": [0.14, 0.14, 0.16], "Material": "Concrete", "TopSurface": "Smooth", "BottomSurface": "Smooth", "Locked": true
+      } }
+    },
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": {
+        "Ambient": [0.19, 0.2, 0.26],
+        "OutdoorAmbient": [0.32, 0.34, 0.42],
+        "Brightness": 1.6,
+        "ClockTime": 19.5,
+        "GlobalShadows": true,
+        "FogColor": [0.36, 0.38, 0.47],
+        "FogStart": 120,
+        "FogEnd": 700,
+        "EnvironmentDiffuseScale": 0.6,
+        "EnvironmentSpecularScale": 0.6,
+        "ExposureCompensation": 0.1
+      },
+      "Atmosphere": { "$className": "Atmosphere", "$properties": {
+        "Density": 0.38, "Offset": 0.25, "Color": [0.78, 0.8, 0.9], "Decay": [0.42, 0.45, 0.6], "Glare": 0.2, "Haze": 1.6
+      } },
+      "Bloom": { "$className": "BloomEffect", "$properties": { "Intensity": 0.6, "Size": 24, "Threshold": 1.2 } },
+      "ColorCorrection": { "$className": "ColorCorrectionEffect", "$properties": { "Saturation": -0.15, "Contrast": 0.05, "TintColor": [0.92, 0.94, 1] } }
+    },
+    "SoundService": {
+      "$className": "SoundService",
+      "$properties": { "RespectFilteringEnabled": true },
+      "Music": { "$className": "SoundGroup", "$properties": { "Volume": 0.5 } },
+      "Ambience": { "$className": "SoundGroup", "$properties": { "Volume": 0.6 } },
+      "SFX": { "$className": "SoundGroup", "$properties": { "Volume": 0.8 } }
+    },
+    "StarterGui": { "$className": "StarterGui", "$properties": { "ScreenOrientation": "LandscapeSensor" } }
+  }
+}
