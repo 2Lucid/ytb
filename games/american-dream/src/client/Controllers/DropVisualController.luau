@@ -19,7 +19,17 @@ local MAX_LIVE_DROPS = Economy.LIVE_DROPS_PER_PLOT
 local MAX_DISTANCE = 200
 
 local liveDrops = 0
+-- Compteurs par ligne de production. Une Renaissance détruit et reconstruit le plot :
+-- sans purge, les entrées des anciens dossiers s'accumulent pour toute la session.
 local timers: { [Folder]: number } = {}
+
+local function pruneTimers()
+	for line in timers do
+		if line.Parent == nil then
+			timers[line] = nil
+		end
+	end
+end
 
 local function plotOf(line: Instance): Model?
 	local plot = line:FindFirstAncestorOfClass("Model")
@@ -86,6 +96,12 @@ end
 function DropVisualController.Init() end
 
 function DropVisualController.Start()
+	task.spawn(function()
+		while true do
+			task.wait(30)
+			pruneTimers()
+		end
+	end)
 	RunService.Heartbeat:Connect(function(dt: number)
 		for _, plot in CollectionService:GetTagged("Plot") do
 			local owner = plot:GetAttribute("OwnerUserId")

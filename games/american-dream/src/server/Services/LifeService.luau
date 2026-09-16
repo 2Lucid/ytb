@@ -80,7 +80,7 @@ function LifeService.renaissance(player: Player, voluntary: boolean)
 	st.exitOpen = false
 	PlotService.rebuild(player)
 	PlotService.teleportToPlot(player)
-	EconomyService.markDirty(player)
+	EconomyService.resetProduction(player)
 	local multiplier = Economy.renaissanceMultiplier(data.renaissances)
 	local lineKey = Lore.RENAISSANCE_LINES[((data.renaissances - 1) % #Lore.RENAISSANCE_LINES) + 1]
 	fireLife(player, "renaissance", { multiplier = multiplier, bonus = grantsBonus, lineKey = lineKey, renaissances = data.renaissances })

@@ -106,6 +106,15 @@ function EconomyService.markDirty(player: Player)
 	runtime(player).dirty = true
 end
 
+-- Remet la production à zéro : après une Renaissance, le premier objet doit refaire le trajet
+-- au lieu d'être crédité immédiatement par un accumulateur hérité de la vie précédente.
+function EconomyService.resetProduction(player: Player)
+	local rt = runtime(player)
+	table.clear(rt.accumulators)
+	rt.rentClock = 0
+	rt.dirty = true
+end
+
 local function pushHud(player: Player, rt: Runtime, now: number)
 	local snapshot = EconomyService.snapshot(player)
 	if snapshot then

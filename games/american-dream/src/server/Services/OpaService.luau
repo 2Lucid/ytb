@@ -38,16 +38,35 @@ local function notify(player: Player, key: string, params: { [string]: any })
 	Remotes.getEvent("Notify"):FireClient(player, key, params)
 end
 
-local function candidates(player: Player): { { userId: number, name: string, cost: number } }
+-- Cibles possibles pour l'écran d'OPA. Le coût ne dépend que du cash de la cible ;
+-- la validation complète reste côté serveur au moment de l'attaque.
+local function candidates(player: Player): { { userId: number, name: string, cost: number, blocked: string } }
 	local list = {}
-	for _, other in Players:GetPlayers() do
-		if other ~= player then
-			local p = party(other)
-			if p and p.act >= Economy.Opa.requiredAct then
-				table.insert(list, { userId = other.UserId, name = other.DisplayName, cost = OpaRules.canAttack(party(player) or { userId = 0, act = 0, cash = 0 }, p, os.clock(), cooldownUntil[player.UserId] or 0, activeByTarget[other.UserId]) and select(3, OpaRules.canAttack(party(player) :: OpaRules.Party, p, os.clock(), 0, nil)) or select(3, OpaRules.canAttack({ userId = 0, act = 5, cash = 0 }, p, os.clock(), 0, nil)) })
-			end
-		end
+	local attacker = party(player)
+	if attacker == nil then
+		return list
 	end
+	local now = os.clock()
+	local cooldown = cooldownUntil[player.UserId] or 0
+	for _, other in Players:GetPlayers() do
+		if other == player then
+			continue
+		end
+		local target = party(other)
+		if target == nil or target.act < Economy.Opa.requiredAct then
+			continue
+		end
+		local ok, reason, cost = OpaRules.canAttack(attacker, target, now, cooldown, activeByTarget[other.UserId])
+		table.insert(list, {
+			userId = other.UserId,
+			name = other.DisplayName,
+			cost = cost,
+			blocked = if ok then "" else reason,
+		})
+	end
+	table.sort(list, function(a, b)
+		return a.cost < b.cost
+	end)
 	return list
 end
 

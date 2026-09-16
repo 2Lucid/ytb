@@ -223,7 +223,14 @@ function PlotBuilder.applyItem(plot: Model, ctx: Context, itemId: ItemId)
 		local slot = tonumber(string.match(itemId, "_DECOR_(%d)$")) or 1
 		buildDecor(plot, ctx, item.act, slot)
 	end
-	plot:SetAttribute("Act", PlotState.act({ [itemId] = true }) > (plot:GetAttribute("Act") :: number? or 1) and PlotState.act({ [itemId] = true }) or plot:GetAttribute("Act"))
+	-- L'attribut Act pilote l'ambiance côté client : il ne redescend jamais.
+	if item.kind == "unlock" then
+		local current = plot:GetAttribute("Act")
+		local known = if type(current) == "number" then current else 1
+		if item.act > known then
+			plot:SetAttribute("Act", item.act)
+		end
+	end
 end
 
 local function buttonLabel(item: Types.ShopItem, locale: string): string

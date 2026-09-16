@@ -201,7 +201,18 @@ local function onOpaEvent(kind: string, payload: { [string]: any })
 			notify("opa.reason.target_act")
 			return
 		end
-		local target = candidates[1]
+		-- première cible attaquable ; sinon on explique pourquoi aucune ne l'est
+		local target = nil
+		for _, entry in candidates do
+			if entry.blocked == nil or entry.blocked == "" then
+				target = entry
+				break
+			end
+		end
+		if target == nil then
+			notify(candidates[1].blocked or "opa.reason.target_busy", { cost = Format.money(candidates[1].cost or 0) })
+			return
+		end
 		showOverlay("opa.title", Strings.get("opa.attack", locale, { cost = Format.money(target.cost or 0) }) .. "\n" .. target.name, "exit.confirm.yes", "exit.confirm.no", function()
 			Remotes.getEvent("OpaAttack"):FireServer(target.userId)
 		end)
